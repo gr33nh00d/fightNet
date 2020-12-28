@@ -7,4 +7,4 @@ We created a back-propagation, multi-layer perceptron network into which we inpu
 
 
 ## Current Issues
-Running the dataFormer.py will dos the ufc page to the point of being locked out (Error 429).
+Running the dataFormer.py will (unintentionally) DOS the ufc page to the point of being locked out (Error 429).
