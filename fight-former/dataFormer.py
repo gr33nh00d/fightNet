@@ -41,34 +41,38 @@ def stanceVal(stance):
         print("error in stance name: "+stance)
         quit()
 
-stats = json.loads(getFighterStats("Conor McGregor"))
-print(stats)
-# quit()
+## Ok ok so we do not intend to spam them but storing this code here until we find a more polite way to get data out of there website
+def spamUFCwebsite():
+    stats = json.loads(getFighterStats("Conor McGregor"))
+    print(stats)
+    # quit()
 
-dan = Fighter(
-    stats["Name"],
-    heightToInches(stats["Height:"]),
-    trimNonNum(stats["Weight:"]),
-    trimNonNum(stats["Reach:"]),
-    stanceVal(stats["STANCE:"]),
-    stats["DOB:"][-4:]
-    )
-text_file = open("fighterName.txt", "r")
-lines = text_file.readlines()
-text_file.close()
-
-fighterStats = []
-for name in lines:
-    stats = json.loads(getFighterStats(name))
-    try:
-        fighter = Fighter(
-            stats["Name"],
-            heightToInches(stats["Height:"]),
-            trimNonNum(stats["Weight:"]),
-            trimNonNum(stats["Reach:"]),
-            stanceVal(stats["STANCE:"]),
-            stats["DOB:"][-4:]
+    dan = Fighter(
+        stats["Name"],
+        heightToInches(stats["Height:"]),
+        trimNonNum(stats["Weight:"]),
+        trimNonNum(stats["Reach:"]),
+        stanceVal(stats["STANCE:"]),
+        stats["DOB:"][-4:]
         )
-        fighterStats.append(fighter)
-    except Exception as e:
-        print("skipping ", name)
+    text_file = open("fighterName.txt", "r")
+    lines = text_file.readlines()
+    text_file.close()
+
+    fighterStats = []
+    for name in lines:
+        stats = json.loads(getFighterStats(name))
+        try:
+            fighter = Fighter(
+                stats["Name"],
+                heightToInches(stats["Height:"]),
+                trimNonNum(stats["Weight:"]),
+                trimNonNum(stats["Reach:"]),
+                stanceVal(stats["STANCE:"]),
+                stats["DOB:"][-4:]
+            )
+            fighterStats.append(fighter)
+        except Exception as e:
+            print("skipping ", name)
+
+def getLastTenRounds(name, date):
