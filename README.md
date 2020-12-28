@@ -3,7 +3,7 @@
 By Gr33nH00d & [ИЧХ](https://www.linkedin.com/in/ethan-charles-holmes-225158189)
 
 ## About
-We created a back-propagation, multi-layer perceptron network that inputs fighter physical stats and statistics on last 10 rounds of fights and predicts what fighter will win a match.
+We created a back-propagation, multi-layer perceptron network into which we input fighter physical stats and data from a fighters' last 10 rounds of fights. The network outputs a prediction as to which fighter is most likely to win in a matchup. 
 
 
 ## Current Issues
